@@ -1,0 +1,84 @@
+/* ============================================================================
+   SETTINGS
+   ========================================================================= */
+
+// Brutal Reset
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * All of Shell's settings (Sass variables).
+ */
+
+$g-base-number: 16 !default;
+
+$g-font-size: $g-base-number !default;
+
+
+/* 4. Spacing (Global)
+   ========================================================================= */
+
+/**
+ * The scale based on `$g-base-number` being 16:
+ *
+ * Decrease: 12, 8, 4
+ * Increase: 24, 32, 40, 48, 56, 72, 96
+ */
+
+$g-spacing-base: $g-base-number !default;
+
+// Decrease
+$g-spacing-small: floor($g-spacing-base - 4) !default;
+
+$g-spacing-x-small: floor($g-spacing-base / 2) !default;
+
+$g-spacing-2x-small: floor($g-spacing-base / 4) !default;
+
+// Increase
+$g-spacing-large: ceil($g-spacing-base / 2 * 3) !default;
+
+$g-spacing-x-large: ceil($g-spacing-base / 2 * 4) !default;
+
+$g-spacing-2x-large: ceil($g-spacing-base / 2 * 5) !default;
+
+$g-spacing-3x-large: ceil($g-spacing-base / 2 * 6) !default;
+
+$g-spacing-4x-large: ceil($g-spacing-base / 2 * 7) !default;
+
+$g-spacing-5x-large: ceil($g-spacing-base / 2 * 9) !default;
+
+$g-spacing-6x-large: ceil($g-spacing-base / 2 * 12) !default;
+
+
+
+/* Grid (Local)
+   ========================================================================= */
+
+/**
+ * Grid column widths.
+ */
+
+$grid-1-col-width: 8.333% !default;
+
+$grid-2-col-width: 16.666% !default;
+
+$grid-3-col-width: 25% !default;
+
+$grid-4-col-width: 33.333% !default;
+
+$grid-5-col-width: 41.666% !default;
+
+$grid-6-col-width: 50% !default;
+
+$grid-7-col-width: 58.333% !default;
+
+$grid-8-col-width: 66.666% !default;
+
+$grid-9-col-width: 75% !default;
+
+$grid-10-col-width: 83.333% !default;
+
+$grid-11-col-width: 91.666% !default;

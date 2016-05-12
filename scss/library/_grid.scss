@@ -1,0 +1,308 @@
+/* ============================================================================
+   GRID
+   ========================================================================= */
+
+/* ----------------------------------------------------------------------------
+ *
+ * Grid is namespaced with "l" followed by one hyphen, like this:
+ *
+   l-grid
+ *
+ * The "l" stands for "layout" as Grid is a "Layout Module".
+ *
+ * ----------------------------------------------------------------------------
+ *
+ * @markup
+    <div class="l-grid [modifier(s)]">
+        <div class="l-grid__item l-grid__item--2-col">
+            […]
+        </div>
+        <div class="l-grid__item l-grid__item--2-col">
+            […]
+        </div>
+    </div>
+    <div class="l-grid [modifier(s)]">
+        <div class="l-grid__item l-grid__item--4-col">
+            […]
+        </div>
+        <div class="l-grid__item l-grid__item--4-col">
+            […]
+        </div>
+        <div class="l-grid__item l-grid__item--4-col">
+            […]
+        </div>
+        <div class="l-grid__item l-grid__item--4-col">
+            […]
+        </div>
+    </div>
+ *
+ * @credit
+ * https://github.com/suitcss/components-grid
+ */
+
+
+/**
+ * Grid container.
+ *
+ * 1. Negative left margin to negate the horizontal gutters.
+ *
+ * N.B. all grid gutter sizes are in "Settings -> Grid (Local)".
+ */
+
+.l-grid {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -(rem($g-spacing-base)); // [1]
+}
+
+
+/**
+ * Grid items.
+ *
+ * 1. Allows the use of widths.
+ * 2. Horizontal gutter.
+ * 3. 100% width by default—"Mobile-first".
+ *
+ * N.B. all grid gutter sizes are in "Settings -> Grid (Local)".
+ */
+
+.l-grid__item {
+    flex-basis: auto; // [1]
+    padding-left: rem($g-spacing-base); // [2]
+    width: 100%; // [3]
+}
+
+
+/**
+ * Modifier: all items match height of tallest item in a row.
+ */
+
+.l-grid--equal-height > .l-grid__item {
+    display: flex;
+}
+
+
+/**
+ * Modifier: gutterless for both horizontal and vertical gutters.
+ *
+ * N.B. we boost the specificity by chaining the base class to the modifier
+ * class to make sure we're always overriding any gutter modifier classes.
+ */
+
+.l-grid.l-grid--gutterless {
+    margin-left: 0;
+
+    > .l-grid__item {
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+}
+
+
+/**
+ * Modifiers: gutter sizes.
+ *
+ * N.B. all grid gutter sizes are in "Settings -> Grid (Local)".
+ */
+
+// Base
+// N.B. having to reinstate the default so that any nested grids that inherit
+// a "Gutterless" modifier can be easily reapplied
+.l-grid--gutter-horizontal-base {
+    margin-left: -(rem($g-spacing-base));
+
+    > .l-grid__item {
+        padding-left:  rem($g-spacing-base);
+    }
+}
+
+// Decrease
+.l-grid--gutter-horizontal-small {
+    margin-left: -(rem($g-spacing-small));
+
+    > .l-grid__item {
+        padding-left:  rem($g-spacing-small);
+    }
+}
+
+.l-grid--gutter-horizontal-x-small {
+    margin-left: -(rem($g-spacing-x-small));
+
+    > .l-grid__item {
+        padding-left:  rem($g-spacing-x-small);
+    }
+}
+
+// Increase
+.l-grid--gutter-horizontal-large {
+    margin-left: -(rem($g-spacing-large));
+
+    > .l-grid__item {
+        padding-left:  rem($g-spacing-large);
+    }
+}
+
+.l-grid--gutter-horizontal-x-large {
+    margin-left: -(rem($g-spacing-x-large));
+
+    > .l-grid__item {
+        padding-left:  rem($g-spacing-x-large);
+    }
+}
+
+
+/**
+ * Modifiers: vertical gutters.
+ *
+ * N.B. all grid gutter sizes are in "Settings -> Grid (Local)".
+ */
+
+// Base
+.l-grid--gutter-vertical-base > .l-grid__item {
+    margin-bottom: rem($g-spacing-base);
+}
+
+// Decrease
+.l-grid--gutter-vertical-small > .l-grid__item {
+    margin-bottom: rem($g-spacing-small);
+}
+
+.l-grid--gutter-vertical-x-small > .l-grid__item {
+    margin-bottom: rem($g-spacing-x-small);
+}
+
+// Increase
+.l-grid--gutter-vertical-large > .l-grid__item {
+    margin-bottom: rem($g-spacing-large);
+}
+
+.l-grid--gutter-vertical-x-large > .l-grid__item {
+    margin-bottom: rem($g-spacing-x-large);
+}
+
+
+/**
+ * Modifiers: alignments.
+ */
+
+// Middle
+.l-grid--align-middle {
+    align-items: center;
+}
+
+// Bottom
+.l-grid--align-bottom {
+    align-items: flex-end;
+}
+
+// Center
+.l-grid--align-center {
+    justify-content: center;
+}
+
+// Right
+.l-grid--align-right {
+    justify-content: flex-end;
+}
+
+
+/**
+ * Modifiers: "space between" and "space around".
+ */
+
+// Space between
+.l-grid--space-between {
+    justify-content: space-between;
+}
+
+// Space around
+.l-grid--space-around {
+    justify-content: space-around;
+}
+
+
+/**
+ * Modifier: fit, all grid items have an equal width.
+ *
+ * 1. Provide all values to avoid IE 10 bug with the shorthand `flex`
+ *    property, see: http://git.io/vllC7.
+ *    Use `0%` to avoid bug in IE 10/11 with unitless `flex-basis`, see:
+ *    http://git.io/vllWx.
+ */
+
+.l-grid--fit .l-grid__item {
+    flex: 1 1 0%;  // [1]
+}
+
+
+/**
+ * Modifier: horizontally center an individual grid item.
+ */
+
+.l-grid__item--align-center {
+    margin: 0 auto;
+}
+
+
+/**
+ * Modifiers: grid column widths.
+ */
+
+// 1 col
+.l-grid__item--1-col {
+    width: $grid-1-col-width;
+}
+
+// 2 col
+.l-grid__item--2-col {
+    width: $grid-2-col-width;
+}
+
+// 3 col
+.l-grid__item--3-col {
+    width: $grid-3-col-width;
+}
+
+// 4 col
+.l-grid__item--4-col {
+    width: $grid-4-col-width;
+}
+
+// 5 col
+.l-grid__item--5-col {
+    width: $grid-5-col-width;
+}
+
+// 6 col
+.l-grid__item--6-col {
+    width: $grid-6-col-width;
+}
+
+// 7 col
+.l-grid__item--7-col {
+    width: $grid-7-col-width;
+}
+
+// 8 col
+.l-grid__item--8-col {
+    width: $grid-8-col-width;
+}
+
+// 9 col
+.l-grid__item--9-col {
+    width: $grid-9-col-width;
+}
+
+// 10 col
+.l-grid__item--10-col {
+    width: $grid-10-col-width;
+}
+
+// 11 col
+.l-grid__item--11-col {
+    width: $grid-11-col-width;
+}
+
+.l-grid__item--12-col {
+    width: $grid-11-col-width;
+}

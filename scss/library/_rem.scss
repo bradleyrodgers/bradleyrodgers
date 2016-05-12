@@ -1,0 +1,16 @@
+// Convert px to rem
+
+@function strip-unit($number) {
+    @if type-of($number) == "number" and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+@function rem($value) {
+    @if type-of($value) != "number" {
+        @error "You have to enter only a number for `$value`. You entered `#{$value}`.";
+    }
+    @return strip-unit($value) / strip-unit($g-font-size) * 1rem;
+}
+

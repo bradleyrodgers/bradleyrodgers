@@ -21,14 +21,27 @@
 
  $primary-color: #424D5E;
 
+ .wf-loading {
+ 	display: none;
+}
 
 .l-container {
+	animation: fadein 2s;
     display: block;
     max-width: 1170px;
     min-width: 320px;
     width: 100%;
     margin: 0 auto;
     padding: 72px 48px;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
 }
 
 .name {

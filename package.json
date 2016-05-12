@@ -1,0 +1,28 @@
+{
+  "name": "bradleyrodgers.github.io",
+  "version": "1.0.0",
+  "description": "This is my portfolio site which can be viewed at [http://www.bradleyrodgers.github.io](http://www.bradleyrodgers.github.io).",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://bradleyrodgers@github.com/bradleyrodgers/bradleyrodgers.github.io.git"
+  },
+  "author": "@bradleyjrodgers",
+  "bugs": {
+    "url": "https://github.com/bradleyrodgers/bradleyrodgers.github.io/issues"
+  },
+  "homepage": "https://github.com/bradleyrodgers/bradleyrodgers.github.io#readme",
+  "scripts": {
+    "scss": "node-sass --output-style compressed -o assets/css scss",
+    "autoprefixer": "postcss -u autoprefixer -r assets/css/style.css",
+    "build": "npm run scss && npm run autoprefixer",
+    "watch": "onchange 'scss/**.scss' -- npm run build",
+    "start": "npm run build && npm run watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "node-sass": "^3.4.2",
+    "onchange": "^2.0.0",
+    "postcss-cli": "^2.5.1"
+  }
+}

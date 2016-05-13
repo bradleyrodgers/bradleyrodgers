@@ -14,12 +14,20 @@
 
 @import 'library/grid';
 
-
 /**
  * Styles.
  */
 
  $primary-color: #424D5E;
+
+ body {
+ 	background-color: #FCF5F5;
+ }
+
+ img {
+ 	width: 100%;
+ 	height: auto;
+ }
 
  .wf-loading {
  	display: none;
@@ -28,11 +36,11 @@
 .l-container {
 	animation: fadein 2s;
     display: block;
-    max-width: 1170px;
-    min-width: 320px;
-    width: 100%;
     margin: 0 auto;
-    padding: 72px 48px;
+    max-width: rem(1266);
+    min-width: rem(320);
+    padding: rem($g-spacing-4x-large) rem($g-spacing-3x-large);
+    width: 100%;
 }
 
 @keyframes fadein {
@@ -48,10 +56,10 @@
 	color: $primary-color;
 	font-family: "franklin-gothic-urw",sans-serif;
 	font-size: 24px;
-	line-height: 24px;
+	line-height: 1.2;
 	font-weight: 500;
 	text-align: center;
-	margin-bottom: 56px;
+	padding-bottom: rem($g-spacing-4x-large);
 }
 
 .headline {
@@ -59,6 +67,18 @@
 	font-family: "freight-display-pro",serif;
 	font-size: 120px;
 	font-weight: 900;
-	line-height: 120px;
+	line-height: 1;
 
+}
+
+.img-1  {
+	margin-top: -290px;
+	position: relative;
+	z-index: -1;
+}
+
+.img-2 {
+	margin-top:-100px;
+	position: relative;
+	z-index: -2;
 }

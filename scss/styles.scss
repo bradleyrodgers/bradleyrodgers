@@ -80,6 +80,24 @@ img {
 	line-height: 1;
 }
 
+@media (max-width: em(800)) {
+	
+	.l-container {
+		padding: rem($g-spacing-4x-large) rem($g-spacing-large);
+	}
+
+	.headline__content {
+		font-size: 34px;
+		line-height: 1.2;
+	}
+
+	.headline {
+		width: 100%;
+	}
+
+
+}
+
 
 /* Contents
    ========================================================================= */
@@ -96,6 +114,8 @@ img {
 	margin-top: rem($g-spacing-5x-large);
 	width: 95%;
 }
+
+
 
 .img-1  {
 	margin-top: -(rem(290));

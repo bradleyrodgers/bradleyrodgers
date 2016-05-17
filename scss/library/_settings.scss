@@ -9,8 +9,11 @@
     padding: 0;
 }
 
+/* Base number (Global)
+   ========================================================================= */
+
 /**
- * All of Shell's settings (Sass variables).
+ * The baseline number from which everything else is derived.
  */
 
 $g-base-number: 16 !default;
@@ -18,12 +21,10 @@ $g-base-number: 16 !default;
 $g-font-size: $g-base-number !default;
 
 
-/* 4. Spacing (Global)
+/* Spacing
    ========================================================================= */
 
 /**
- * The scale based on `$g-base-number` being 16:
- *
  * Decrease: 12, 8, 4
  * Increase: 24, 32, 40, 48, 56, 72, 96
  */
@@ -51,6 +52,8 @@ $g-spacing-4x-large: ceil($g-spacing-base / 2 * 7) !default;
 $g-spacing-5x-large: ceil($g-spacing-base / 2 * 9) !default;
 
 $g-spacing-6x-large: ceil($g-spacing-base / 2 * 12) !default;
+
+$g-spacing-7x-large: ceil($g-spacing-base / 2 * 16) !default;
 
 
 

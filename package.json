@@ -17,12 +17,13 @@
     "autoprefixer": "postcss -u autoprefixer -r assets/css/style.css",
     "build": "npm run scss && npm run autoprefixer",
     "watch": "onchange 'scss/**.scss' -- npm run build",
-    "start": "npm run build && npm run watch"
+    "start": "npm run build && parallelshell 'npm run watch'"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",
     "node-sass": "^3.4.2",
     "onchange": "^2.0.0",
+    "parallelshell": "^2.0.0",
     "postcss-cli": "^2.5.1"
   }
 }

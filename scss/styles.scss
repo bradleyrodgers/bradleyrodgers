@@ -4,14 +4,8 @@
    BRADLEY RODGERS STYLESHEET
    ========================================================================= */
 
- ::selection {
- 	color: #FFFFFF;
- 	background: #FF8F9C;
- }
-
-/**
- * Base.
- */
+/* Imports
+   ========================================================================= */
 
 @import 'library/rem';
 
@@ -19,24 +13,29 @@
 
 @import 'library/grid';
 
-/**
- * Styles.
- */
 
- $primary-color: #424D5E;
+/* Global
+   ========================================================================= */
+ 
+::selection {
+ 	color: #FFFFFF;
+ 	background: #FF8F9C;
+}
 
- body, htmlnpm {
+$primary-color: #424D5E;
+
+body, htmlnpm {
  	background-color: FCF5F5;
- }
+}
 
- img {
+img {
  	width: 100%;
  	height: auto;
- }
-
- .wf-loading {
- 	display: none;
 }
+
+
+/* Layout
+   ========================================================================= */
 
 .l-container {
 	animation: fadein 2s;
@@ -57,7 +56,35 @@
     }
 }
 
-.title-name {
+
+/* Typography
+   ========================================================================= */
+
+.wf-loading {
+ 	display: none;
+}
+
+.name__content {
+	color: $primary-color;
+	font-family: "franklin-gothic-urw",sans-serif;
+	font-size: 24px;
+	line-height: 1.2;
+	font-weight: 500;
+}
+
+.headline__content {
+	color: $primary-color;
+	font-family: "freight-display-pro",serif;
+	font-size: 120px;
+	font-weight: 900;
+	line-height: 1;
+}
+
+
+/* Contents
+   ========================================================================= */
+
+.name {
 	left: 0;	
 	margin: auto;
 	position: fixed;
@@ -65,23 +92,9 @@
 	width: 100%;
 }
 
-.name {
-	color: $primary-color;
-	font-family: "franklin-gothic-urw",sans-serif;
-	font-size: 24px;
-	line-height: 1.2;
-	font-weight: 500;
-	padding-bottom: rem($g-spacing-4x-large);
-}
-
 .headline {
-	color: $primary-color;
-	font-family: "freight-display-pro",serif;
-	font-size: 120px;
-	font-weight: 900;
-	line-height: 1;
 	margin-top: rem($g-spacing-5x-large);
-
+	width: 95%;
 }
 
 .img-1  {

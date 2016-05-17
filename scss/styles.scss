@@ -5,7 +5,7 @@
    ========================================================================= */
 
  ::selection {
- 	color: #FFFFFF;
+ 	color: #fff;
  	background: #FF8F9C;
  }
 
@@ -85,7 +85,7 @@
 }
 
 .img-1  {
-	margin-top: -290px;
+	margin-top: -(rem(290));
 	position: relative;
 	z-index: -1;
 }

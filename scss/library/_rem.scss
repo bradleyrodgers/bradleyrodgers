@@ -14,3 +14,9 @@
     @return strip-unit($value) / strip-unit($g-font-size) * 1rem;
 }
 
+@function em($value, $context: $shell-g-font-size) {
+    @if type-of($value) != "number" or type-of($context) != "number" {
+        @error "You have to enter only numbers for `$value` and `$context`.";
+    }
+    @return strip-unit($value) / strip-unit($context) * 1em;
+}

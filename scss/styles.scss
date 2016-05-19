@@ -38,7 +38,6 @@ img {
    ========================================================================= */
 
 .l-container {
-	animation: fadein 2s;
     display: block;
     margin: 0 auto;
     max-width: rem(1266);
@@ -47,29 +46,16 @@ img {
     width: 100%;
 }
 
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-
-
 /* Typography
    ========================================================================= */
-
-.wf-loading {
- 	display: none;
-}
 
 .name__content {
 	color: $primary-color;
 	font-family: "franklin-gothic-urw",sans-serif;
 	font-size: 24px;
-	line-height: 1.2;
 	font-weight: 500;
+	line-height: 1.2;
+	text-align: center;
 }
 
 .headline__content {
@@ -95,6 +81,11 @@ img {
 		width: 100%;
 	}
 
+	.name__content {
+		text-align: left;
+		padding: 0 rem($g-spacing-large);
+	}
+
 
 }
 
@@ -106,7 +97,6 @@ img {
 	left: 0;	
 	margin: auto;
 	position: fixed;
-	text-align: center;
 	width: 100%;
 }
 
